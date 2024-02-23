@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PERSONAL BLOG</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div id="home">
+        <ul id="myheader">
+            <li><a class="active" href="#">HOME</a></li>
+            <li><a href="#about">TO LEARN</a></li>
+            <li><a href="#cont">CONTACT</a></li>
+        </ul>
+
+        <div class="content">
+            <div class="text-overlay">
+                <p id="pg1">HI HereIam, JEEVA WELCOME YOU TO MY PAGE </p>
+                <p id="pg2">Welcome! I'm a budding software developer eager to explore coding and share my journey with beginners. I'm also delving into investing and finance. Join me as we embark on this learning adventure together!</p>
+            </div>
+        </div>
+        <div class="foot">
+            <p>Software Developer | Data Scientist | Stocks Analyst</p>
+        </div>
+    </div>
+
+    <div id="about">
+        <h1>About Me</h1>   
+        <section class="skills">
+            <h2>My Skills</h2>
+            <ul>
+                <li>Python</li>
+                <li>Java</li>
+            </ul>
+        </section>
+        <section class="interests">
+            <h2>My Interests</h2>
+            <p>I have a keen interest in software development and stock market investing and finance.</p>
+        </section>
+    </div>
+
+    <div id="cont">
+        <h1>Contact Me</h1>
+        <form name="submit-to-google-sheet" >
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="Name" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="Email" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="Message" rows="4" cols="50" required></textarea><br>
+            <input type="submit" value="Submit">
+            <span id="msg"></span>
+        </form>
+
+        <div class="social-links">
+            <a href="https://www.instagram.com/here_iam_jeeva/" target="_blank">Instagram</a><br>
+            <a href="https://github.com/jeevagithub44" target="_blank">GitHub</a><br>
+            <a href="https://www.linkedin.com/in/jeeva444777" target="_blank">LinkedIn</a><br>
+        </div>
+    </div>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzE5rOjSpHfla8eh34XJsOEP02gW2qHgzQQOaa4Hq7_6YLsEKnc1A-3EE0spZ9aq0Q/exec';
+        
+        const form = document.forms['submit-to-google-sheet'];
+        const msg = document.getElementById("msg");
+      
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            // Get current date
+            const currentDate = new Date().toISOString(); // Get current date in ISO format
+            
+            // Append current date to form data
+            const formData = new FormData(form);
+            formData.append('Date', currentDate);
+            
+            // Send form data to API
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully.";
+                    setTimeout(function() {
+                        msg.innerHTML = "";
+                    }, 5000);
+                    form.reset();
+                })
+                .catch(error => console.error('Error!', error.message));
+        });
+    </script>
+</body>
+</html>
