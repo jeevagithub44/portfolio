@@ -1,6 +1,6 @@
 <div align ="center">
 
-# MR - Personal portfolio
+# JEEVA - Personal portfolio
 
 <strong> JEEVA Portofolio </strong> is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
 
@@ -15,12 +15,7 @@
 
  
 ## Demo
-<br>
 
-**Desktop View**
-
-![vCard Desktop Demo](./website-demo-image/desktop1.png "Desktop Demo")
-<br>
 <br>
 
 **Mobile View**
