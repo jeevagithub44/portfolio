@@ -2,7 +2,7 @@
 
 # MR - Personal portfolio
 
-<strong> MR Portofolio </strong> is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
+<strong> JEEVA Portofolio </strong> is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
 
 
  
@@ -29,4 +29,4 @@
 
 ## License
 
-This project is under  **MIT LICENSE**
+This project is under  ** **
